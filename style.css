@@ -1,0 +1,94 @@
+/* Import Poppins Font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+:root {
+   --white: #f7f8f8;
+   --black: #060606;
+   --dark-gray: #1a1a1a;
+}
+
+body {
+    background-color: var(--black);
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 50px;
+
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+
+    z-index: 1;
+}
+
+header::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    backdrop-filter: blur(6px);
+    z-index: -1;
+  }
+
+
+
+nav {
+    width: 1150px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--white);
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+nav h1 {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: default;
+}
+
+nav ul {
+    display:inline-flex;
+    margin-left: auto;
+}
+
+nav li {
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+nav li:nth-child(3){
+    margin-left: 20px;
+}
+
+nav li:nth-child(2){
+    display: flex;
+    flex-direction: row;
+}
+
+nav li:nth-child(2) img {
+    filter: invert(94%) sepia(0%) saturate(2813%) hue-rotate(195deg) brightness(106%) contrast(94%);
+    margin-left: 8px;
+    width: 12px;
+    transition: .2s;
+}
+
+nav li:nth-child(2):hover img {
+    transform: rotate(180deg);
+}
