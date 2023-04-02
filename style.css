@@ -10,6 +10,7 @@
 :root {
    --white: #f7f8f8;
    --black: #060606;
+   --gray: #8A8F98;
    --dark-gray: #1a1a1a;
 
    --header-height: 48px;
@@ -33,12 +34,8 @@ header {
 
     z-index: 1;
 }
-
-header::before, header::after {
-    inset: -1px 0px -50%;
-}
   
-  header::before {
+header::before {
     content: "";
     position: fixed;
     top: 0;
@@ -52,10 +49,9 @@ header::before, header::after {
     -webkit-mask-image:linear-gradient(to bottom,black var(--header-height),transparent);
 }
 
-
 nav {
     width: 1150px;
-    height: 100%;
+    height: var(--header-height);
 
     display: flex;
     align-items: center;
@@ -76,6 +72,10 @@ nav h1 {
     cursor: default;
 }
 
+nav .menu-burger {
+    display: none;
+}
+
 nav ul {
     display:inline-flex;
     margin-left: auto;
@@ -89,6 +89,18 @@ nav li {
 
     display: flex;
     align-items: center;
+}
+
+nav li a {
+    transition: .4s;
+}
+
+nav li:hover a {
+    color: var(--gray);
+}
+
+nav li:nth-child(2):hover a {
+    color: var(--white);
 }
 
 nav li:nth-child(3){
@@ -129,10 +141,15 @@ nav li:nth-child(2):hover img {
     font-size: 15px;
     border-radius: 6px;
     padding: 10px;
+    color: var(--gray);
 }
 
 .projects-window-text-box:hover {
     background-color: var(--dark-gray);
+}
+
+.projects-window-text-box:hover p {
+    color: var(--white);
 }
 
 nav li:nth-child(2):hover .projets-window-container{
@@ -147,8 +164,44 @@ nav li:nth-child(2):hover .projets-window-container{
 
 
 @media (max-width: 640px) {
+    header {
+        height: 100vh;
+    }
+
     nav {
-        color: red;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav .menu-burger {
+        display: block;
+        filter: invert(94%) sepia(0%) saturate(2813%) hue-rotate(195deg) brightness(106%) contrast(94%);
+        width: 18px;
+        margin-left: auto;
+    }
+
+    nav ul.active {
+        position: absolute;
+        top: var(--header-height);
+        display: flex;
+        flex-direction: column;
+        width: calc(100vw - 80px);
+    }
+
+    nav li:nth-child(n){
+        height: var(--header-height);
+        margin: 0;
+        padding: 0;
+        justify-content: normal;
+        border-bottom: 1px solid var(--dark-gray);
+    }
+
+    nav li:nth-child(2) {
+        order: 2;
+    }
+
+    nav li:nth-child(2) img {
+        display: none;
     }
 }
   
