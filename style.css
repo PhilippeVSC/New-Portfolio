@@ -1,12 +1,14 @@
 /* Import Poppins Font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Remove Default styles */
 * {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
+/* Import Variable */
 :root {
    --white: #f7f8f8;
    --black: #060606;
@@ -22,7 +24,9 @@ body {
     text-rendering: optimizelegibility;
 }
 
-/*------ Header ------*/
+/*-------- Header --------*/
+
+/* header */
 header {
     width: 100%;
     height: var(--header-height);
@@ -32,9 +36,11 @@ header {
     position: fixed;
     top: 0;
 
+    transition: .4s;
     z-index: 1;
 }
-  
+
+/* header::before (For the blurred background) */
 header::before {
     content: "";
     position: fixed;
@@ -49,6 +55,7 @@ header::before {
     -webkit-mask-image:linear-gradient(to bottom,black var(--header-height),transparent);
 }
 
+/* header::before (For the blurred background) */
 nav {
     width: 1150px;
     height: var(--header-height);
@@ -66,22 +73,26 @@ nav {
     margin-left: 40px;
 }
 
+/* header title */
 nav h1 {
     font-size: 16px;
     font-weight: 600;
     cursor: default;
 }
 
+/* header menu burger */
 nav .menu-burger {
     display: none;
 }
 
+/* header ul */
 nav ul {
     display:inline-flex;
     margin-left: auto;
     height: 100%;
 }
 
+/* header li */
 nav li {
     margin-left: 30px;
     cursor: pointer;
@@ -91,20 +102,24 @@ nav li {
     align-items: center;
 }
 
+/* transition for hover */
 nav li a {
     transition: .4s;
 }
 
+/* different margin for the projects arrow */
 nav li:nth-child(3){
     margin-left: 20px;
 }
 
+/* header projects menu */
 nav li:nth-child(2){
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+/* projects menu arrow */
 nav li:nth-child(2) img {
     filter: invert(94%) sepia(0%) saturate(2813%) hue-rotate(195deg) brightness(106%) contrast(94%);
     margin-left: 8px;
@@ -112,6 +127,7 @@ nav li:nth-child(2) img {
     transition: .2s;
 }
 
+/* rotate projects arrow on hover */
 nav li:nth-child(2):hover img {
     transform: rotate(180deg);
 }
@@ -119,14 +135,17 @@ nav li:nth-child(2):hover img {
 
 /* Header style only for computer screen size */
 @media (min-width: 641px) {
+    /* header text hover */
     nav li:hover a {
         color: var(--gray);
     }
 
+    /* disable text hover when hovering projects window */
     nav li:nth-child(2):hover a {
         color: var(--white);
     }
 
+    /* header projects window */
     .projets-window-container {
         opacity: 0%;
         position: absolute;
@@ -140,6 +159,7 @@ nav li:nth-child(2):hover img {
         visibility: hidden;
     }
     
+    /* header projects window text box */
     .projects-window-text-box {
         font-size: 15px;
         border-radius: 6px;
@@ -155,6 +175,7 @@ nav li:nth-child(2):hover img {
         color: var(--white);
     }
     
+    /* show project window when project text hover */
     nav li:nth-child(2):hover .projets-window-container{
         opacity: 100%;
         visibility: visible;
@@ -162,16 +183,24 @@ nav li:nth-child(2):hover img {
     }
 }
 
+/* Tablet Size */
 @media (max-width: 640px) {
     header {
         height: 100vh;
     }
 
+    /* When burger menu clicked */
+    header.active {
+        backdrop-filter: blur(10px);
+    }
+
+    /* navbar */
     nav {
         display: flex;
         flex-wrap: wrap;
     }
 
+    /* Menu burger */
     nav .menu-burger {
         display: block;
         filter: invert(94%) sepia(0%) saturate(2813%) hue-rotate(195deg) brightness(106%) contrast(94%);
@@ -179,10 +208,12 @@ nav li:nth-child(2):hover img {
         margin-left: auto;
     }
 
+    /* Hide ul when burger menu button isnt clicked */
     nav ul {
         display: none;
     }
 
+    /* Show ul when burger menu button is clicked */
     nav ul.active {
         position: absolute;
         top: var(--header-height);
@@ -191,6 +222,7 @@ nav li:nth-child(2):hover img {
         width: calc(100vw - 80px);
     }
 
+    /* Select each li */
     nav li:nth-child(n){
         height: var(--header-height);
         margin: 0;
@@ -200,10 +232,12 @@ nav li:nth-child(2):hover img {
         border-bottom: 1px solid var(--dark-gray);
     }
 
+    /* Change li text color when hover */
     nav li:nth-child(n) a:hover {
         color: var(--gray);
     }
 
+    /* Change order to set the Project button at the end */
     nav li:nth-child(2) {
         order: 2;
 
@@ -211,10 +245,12 @@ nav li:nth-child(2):hover img {
         align-items: center;
     }
 
+    /* Hide the projects arrow */
     nav li:nth-child(2) img {
         display: none;
     }
 
+    /* Projects window container */
     .projets-window-container {
         position: absolute;
         visibility: visible;
@@ -226,12 +262,15 @@ nav li:nth-child(2):hover img {
         width: calc(100vw - 80px);
     }
 
+    /* Projects window text box */
     .projects-window-text-box {
         height: var(--header-height);
         display: flex;
         align-items: center;
         border-bottom: 1px solid var(--dark-gray);
     }
+
+    /* Projects window text box on hover */
     .projects-window-text-box:hover {
         color: var(--gray);
         transition: .4s;
