@@ -340,7 +340,7 @@ main section {
 
         display: flex;
         flex-direction: column;
-        transform: translateY(125px);
+        transform: translateY(120px);
         width: calc(100vw - 80px);
     }
 
@@ -358,4 +358,3 @@ main section {
         transition: .4s;
     }
 }
-  
