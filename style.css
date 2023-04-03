@@ -1,6 +1,7 @@
 /* Import Poppins Font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 /* Remove Default styles */
 * {
     margin: 0;
@@ -132,6 +133,77 @@ nav li:nth-child(2):hover img {
     transform: rotate(180deg);
 }
 
+/*-------- Main --------*/
+main {
+    width: 100%;
+    height: 5000px;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* Define style for all sections */
+main section {
+    width: 1050px;
+    height: 100vh;
+}
+
+/*-------- Accueil -------- */
+.accueil .text-container {
+    margin-top: 400px;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.accueil .text-container p {
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.accueil .text-container p:nth-child(1){
+    background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%) padding-box text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.accueil .text-container p:nth-child(2){
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--white);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.accueil .text-container p:nth-child(3){
+    width: 850px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--gray);
+    text-align: center;
+    line-height: 28px;
+    margin-top: 20px;
+}
+
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 
 /* Header style only for computer screen size */
 @media (min-width: 641px) {
@@ -180,6 +252,12 @@ nav li:nth-child(2):hover img {
         opacity: 100%;
         visibility: visible;
         transform: translateY(114px);
+    }
+}
+
+@media (max-width: 850px) {
+    .accueil .text-container p:nth-child(3) {
+        width: 100%;
     }
 }
 
