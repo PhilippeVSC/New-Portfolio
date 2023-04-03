@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    box-sizing: border-box;
 }
 
 /* Import Variable */
@@ -145,11 +146,19 @@ main {
 /* Define style for all sections */
 main section {
     width: 1050px;
+    max-width: 100%;
     height: 100vh;
 }
 
 /*-------- Accueil -------- */
-.accueil .text-container {
+#accueil {
+    width: 100%;
+}
+
+#accueil .text-container {
+    padding-left: 20px;
+    padding-right: 20px;
+
     margin-top: 400px;
     width: 100%;
     height: fit-content;
@@ -159,13 +168,13 @@ main section {
     flex-direction: column;
 }
 
-.accueil .text-container p {
+#accueil .text-container p {
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
 
-.accueil .text-container p:nth-child(1){
+#accueil .text-container p:nth-child(1){
     background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%) padding-box text;
     -webkit-text-fill-color: transparent;
     font-family: 'Poppins';
@@ -174,17 +183,18 @@ main section {
     letter-spacing: 3px;
 }
 
-.accueil .text-container p:nth-child(2){
+#accueil .text-container p:nth-child(2){
     font-family: 'Poppins';
     font-weight: 700;
-    font-size: 36px;
+    font-size: min(36px, 12vw);
     color: var(--white);
     text-align: center;
     margin-top: 20px;
 }
 
-.accueil .text-container p:nth-child(3){
+#accueil .text-container p:nth-child(3){
     width: 850px;
+    max-width: 100%;
     font-family: 'Poppins';
     font-weight: 500;
     font-size: 17px;
@@ -252,12 +262,6 @@ main section {
         opacity: 100%;
         visibility: visible;
         transform: translateY(114px);
-    }
-}
-
-@media (max-width: 850px) {
-    .accueil .text-container p:nth-child(3) {
-        width: 100%;
     }
 }
 
