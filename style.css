@@ -175,8 +175,10 @@ main section {
 }
 
 #accueil .text-container p:nth-child(1){
-    background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%) padding-box text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     font-family: 'Poppins';
     font-weight: 500;
     font-size: 14px;
