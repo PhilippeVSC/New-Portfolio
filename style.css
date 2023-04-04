@@ -18,11 +18,11 @@
    --dark-gray: #1a1a1a;
 
    --header-height: 48px;
+   --radius: 10px;
 }
 
 body {
     background-color: var(--black);
-
     text-rendering: optimizelegibility;
 }
 
@@ -140,7 +140,8 @@ main {
     height: 5000px;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Define style for all sections */
@@ -152,14 +153,16 @@ main section {
 
 /*-------- Accueil -------- */
 #accueil {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 #accueil .text-container {
     padding-left: 20px;
     padding-right: 20px;
 
-    margin-top: 400px;
+    margin-top: 550px;
     width: 100%;
     height: fit-content;
 
@@ -201,9 +204,87 @@ main section {
     font-weight: 500;
     font-size: 17px;
     color: var(--gray);
-    text-align: center;
     line-height: 28px;
+    text-align: center;
     margin-top: 20px;
+}
+
+#accueil .separator {
+    margin-top: 120px;
+    width: 850px;
+    height: 1px;
+    background-color: var(--gray);
+}
+
+/*-------- Projets --------*/
+#projets {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 50px;
+}
+
+#projets .text-container {
+    padding-left: 100px;
+}
+
+#projets .text-container p:nth-child(1){
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 36px;
+    width: fit-content;
+
+    background: linear-gradient(90deg, rgb(255, 248, 85) 0.04%, rgb(70, 227, 183) 100.04%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#projets .text-container p:nth-child(2){
+    margin-top: 10px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--gray);
+    line-height: 28px;
+    width: 850px;
+    max-width: 100%;
+}
+
+#projets .projects-container {
+    margin-top: 50px;
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    width: calc((100% / 3) - (16px / 3));
+    height: 300px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.project::before {
+    background-color: radial-gradient(
+        800px circle at 100px 100px,
+        rgba(255, 255, 255, 0.6),
+        transparent 40%
+    );
+    border-radius: inherit;
+    content:"";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 0;
+    z-index: 2;
 }
 
 @keyframes slideTop {
