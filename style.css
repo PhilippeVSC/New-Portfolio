@@ -49,10 +49,11 @@ header nav {
 }
 
 /* Menu Burger Icon */
-header nav #menu-burger {
+#menu-burger {
     width: 25px;
     visibility: hidden;
     margin-left: auto;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(1deg) brightness(101%) contrast(104%);
 }
 
 header nav .menu-burger-container {
@@ -80,6 +81,7 @@ header nav ul {
     margin-left: auto;
     display: inline-flex;
     align-items: center;
+    visibility: visible;
 
     font-family: 'Poppins';
     font-weight: 600;
@@ -130,12 +132,13 @@ header nav li:nth-child(2):hover .header-chevron {
     transform: rotate(180deg);
 }
 
+/* Select the window that appear when projects is hover */
 .header-projects-container {
     position: absolute;
     width: 180px;
     height: fit-content;
 
-    transform: translateX(-25%);
+    transform: translateX(-25%); /* To be centered */
     top: 30px;
 
     padding: 10px;
@@ -144,7 +147,7 @@ header nav li:nth-child(2):hover .header-chevron {
     border-radius: 10px;
     border: 1px solid var(--dark-gray);
 
-    visibility: hidden;
+    visibility: hidden; /* Hidden when not hovered */
     opacity: 0;
     transition: .4s;
 }
@@ -159,7 +162,7 @@ header nav li:nth-child(2):hover .header-chevron {
     display: flex;
     align-items: center;
 
-    text-decoration: none;
+    text-decoration: none; /* Remove the underline */
     color: var(--light-gray);
 
     border-radius: 6px;
@@ -173,6 +176,7 @@ header nav li:nth-child(2):hover .header-chevron {
     font-size: 14px;
 }
 
+/* Select projects icon in .header-projects-container */
 .header-projects-container a .header-projects-icon {
     width: 16px;
     filter: invert(56%) sepia(9%) saturate(302%) hue-rotate(178deg) brightness(91%) contrast(88%);
@@ -184,138 +188,103 @@ header nav li:nth-child(2):hover .header-chevron {
     background-color: var(--dark-gray);
 }
 
+/* Change the SVG color of icons when .header-projects-container is hovered */
 .header-projects-container a:hover .header-projects-icon {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(1deg) brightness(101%) contrast(104%);
 }
 
+/* When Projects is hovered, projects list window is shown */
 li:nth-child(2):hover .header-projects-container {
     visibility: visible;
     opacity: 1;
     top: 42px;
 }
 
-/* Mobile Screen Size */
+/*-------- Mobile Screen Size --------*/
 @media (max-width: 700px) {
-    header {
-        height: 100vh;
+    /* Show the menu burger icon */
+    #menu-burger {
+        visibility: visible;
+    }
+
+    /* Hide the projects chevron */
+    .header-chevron {
+        display: none;
+    }
+
+    /* Set style for all text elements in header */
+    header a,
+    .header-projects-container a p {
+        color: var(--white);
+        font-size: 16px;
+        margin: 0;
     }
 
     header nav {
         width: 100%;
+
         display: flex;
         flex-wrap: wrap;
-        align-items: start;
     }
 
-    header nav #menu-burger {
-        visibility: visible;
-        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(1deg) brightness(101%) contrast(104%);
-    }
-
-    header nav .menu-burger-container {
-        width: 100%;
-        height: var(--header-height);
-
-        display: inline-flex;
-        border-bottom: 1px solid var(--dark-gray);
-    }
-
-    header nav .menu-burger-container img {
-        margin-left: auto;
-    }
-
+    /* Select all ul */
     header nav ul {
-        margin-top: 0;
         width: 100%;
-
-        display: flex;
-        flex-direction: column;
-        transition: .4s ease-in-out;
-
-        transform: translateY(20%);
-        visibility: visible;
-        opacity: 0;
-    }
-
-    header nav ul li {
-        height: var(--header-height);
-        width: 100%;
-        margin: 0;
-        border-bottom: 1px solid var(--dark-gray);
-    }
-
-    header .header-chevron {
-        display: none;
-    }
-
-    header nav li:nth-child(2){
-        order: 3;
-
         height: fit-content;
+        margin: 0;
+
         display: flex;
-        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-direction: column;
     }
 
-    header nav li:nth-child(2) a:not(:last-child) {
-        height: var(--header-height);
+    /* Select all li */
+    header nav ul li {
+        margin: 0;
+        padding: 0;
         width: 100%;
 
-        display: flex;
-        align-items: center;
+        height: var(--header-height);
         border-bottom: 1px solid var(--dark-gray);
     }
 
+    /* Select Projects li */
+    header nav ul li:nth-child(2) {
+        order: 4;
+        position: relative;
+    }
+
+    /* Select .header-projects-container whether it is being hovered or not */
+    header nav ul li:nth-child(2):hover .header-projects-container,
     .header-projects-container {
+        position: absolute;
+        top: 100%;
         visibility: visible;
         opacity: 1;
-    
-        position: relative;
-    
         width: 100%;
-        height: fit-content;
-        
-        border-radius: 0;
         padding: 0;
-        margin: 0;
-        top: 0;
-    
-        transform: translateX(0);
-    
-        background-color: transparent;
-        border: none;
-    
-        display: flex; /* Ajouter cette ligne */
-        flex-direction: column;
-        justify-content: flex-start; /* Ajouter cette ligne */
-    }
-
-    .header-projects-container a {
-        height: var(--header-height);
         border-radius: 0;
-        padding-left: 0;
-    }
+        border: none;
+        background-color: transparent;
 
-    .header-projects-container a p {
-        margin: 0;
+        /* reset slide animation */
+        transform: translate(0);
+        top: 100%;
+      }
 
-        font-size: 16px;
-        color: var(--white);
-    }
-
-    .header-projects-container img {
+    /* remove all projects img */
+    .header-projects-container a img {
         display: none;
     }
 
-    li:nth-child(2):hover .header-projects-container {
-        top: 0;
-    }
-
-    .header-projects-container a:hover {
+    /* Select .header-projects-container a whether it is being hovered or not */
+    .header-projects-container a:hover,
+    .header-projects-container a {
         background-color: transparent;
-    }
-
-    header nav li:hover {
-        color: var(--white);
+        height: var(--header-height);
+        border-bottom: 1px solid var(--dark-gray);
+        border-radius: 0;
+        padding: 0;
     }
 }
   
