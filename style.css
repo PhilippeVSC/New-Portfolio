@@ -281,58 +281,33 @@ main {
 #wordpress, #html, #css, #javascript {
     position: absolute;
     opacity: 0.5;
+    background-size: cover; /* or background-size: 100%; */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #wordpress {
     top: 250px;
-    left: 100px;
-    background-color: #028cb0;
+    left: 120px;
     box-shadow: 0px 0px 100px 20px rgba(2,140,176,0.75);
-    animation: opacityAnimation 4s infinite, sizeAnimation 18s infinite;
 }
 
 #html {
     top: 100px;
     left: 320px;
-    background-color: #e44d26;
     box-shadow: 0px 0px 100px 20px rgba(228,77,38,0.75);
-    animation: opacityAnimation 5s infinite, sizeAnimation 19s infinite;
 }
 
 #css {
     top: 240px;
     left: 580px;
-    background-color: #1172b8;
     box-shadow: 0px 0px 100px 20px rgba(17,114,184,0.75);
-    animation: opacityAnimation 6s infinite, sizeAnimation 20s infinite;
 }
 
 #javascript {
     top: 120px;
-    left: 830px;
-    background-color: #f7df1e;
+    left: 800px;
     box-shadow: 0px 0px 100px 20px rgba(247,223,30,0.75);
-    animation: opacityAnimation 7s infinite, sizeAnimation 21s infinite;
-}
-
-@keyframes opacityAnimation {
-    0%, 100% {
-        opacity: 0.2;
-    }
-    50% {
-        opacity: 0.6;
-    }
-}
-
-@keyframes sizeAnimation {
-    0%, 50%, 100% {
-        width: 80px;
-        height: 80px;
-    }
-    25%, 75% {
-        width: 60px;
-        height: 60px;
-    }
 }
 
 #home .top-part .picture {

@@ -8,6 +8,7 @@
     <meta name="author" content="Philippe Vives Carceller">
     <meta name="description" content="Bonjour, je suis Philippe Vives Carceller et voici mon Portfolio. Vous pourrez y retrouver des informations me concernant ainsi que les projets que j'ai réalisés récemment.">
     <link href="style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Portfolio</title>
 </head>
 <body>
@@ -70,18 +71,10 @@
         <section id="home">
             <div class="top-part">
                 <div class="background">
-                    <div id="wordpress">
-                        <img src="src/img/language-icon/wordpress.svg">
-                    </div>
-                    <div id="html">
-                        <img src="src/img/language-icon/html.svg">
-                    </div>
-                    <div id="css">
-                        <img src="src/img/language-icon/css.svg">
-                    </div>
-                    <div id="javascript">
-                        <img src="src/img/language-icon/javascript.svg">
-                    </div>
+                    <div class="icon" id="wordpress" style="background-image: url('src/img/language-icon/wordpress.svg')"></div>
+                    <div class="icon" id="html" style="background-image: url('src/img/language-icon/html.svg')"></div>
+                    <div class="icon" id="css" style="background-image: url('src/img/language-icon/css.svg')"></div>
+                    <div class="icon" id="javascript" style="background-image: url('src/img/language-icon/javascript.svg')"></div>
                 </div>
                 <div class="picture"></div>
             </div>
@@ -112,7 +105,6 @@
     <footer>
 
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
