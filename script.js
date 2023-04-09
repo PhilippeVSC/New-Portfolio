@@ -3,7 +3,7 @@ function ShowHeader() {
     var header = document.querySelector('header');
     header.classList.toggle('active');
 }
-  
+
 // Selectionne les icons ayant la classe '.icon'.
 var icons = document.querySelectorAll('.icon');
 
