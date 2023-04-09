@@ -54,8 +54,6 @@ header::before {
     /* Blur fade to transparent */
     mask-image: linear-gradient(to bottom,black 0px, black var(--header-height), transparent);
     -webkit-mask-image:linear-gradient(to bottom, black 0px, black var(--header-height),transparent);
-
-    transition: .3s;
 }
 
 /* Navbar */
@@ -390,18 +388,6 @@ main {
         display: none;
     }
 
-    /* Set a transition for all elements in header */
-    header * {
-        transition: .15s ease-out;
-        transition-delay: 0s;
-    }
-
-    /* Transition delay for waiting the header height transition to be finished */ 
-    header.active * {
-        transition: .3s ease-out;
-        transition-delay: .1s;
-    }
-
     /* Set style for all text elements in <header> */
     header a,
     .header-projects-container a p {
@@ -427,6 +413,7 @@ main {
         align-items: flex-start;
         flex-direction: column;
 
+        display: none;
         visibility: hidden;
         opacity: 0;
     }
@@ -492,6 +479,7 @@ main {
 
     /* Show the navbar when header have .active class */
     header.active nav ul {
+        display: flex;
         visibility: visible;
         opacity: 1;
     }
