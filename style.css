@@ -34,6 +34,8 @@ header {
 
     color: var(--white);
     z-index: 10;
+
+    background-color: rgba(6,6,6,0.2);
 }
 
 /* Blur header background */
@@ -50,7 +52,7 @@ header::before {
     z-index: -1;
 
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter:blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     /* Blur fade to transparent */
     mask-image: linear-gradient(to bottom,black 0px, black var(--header-height), transparent);
     -webkit-mask-image:linear-gradient(to bottom, black 0px, black var(--header-height),transparent);
@@ -470,10 +472,11 @@ main {
     header.active::before {
         height: 100vh;
 
-        --background-color: rgba(6, 6, 6, 0.6);; /* change the --background-color var opacity */
-        background-color: var(--background-color);
-        mask-image: none; /* Delete the linear gradient */
-        backdrop-filter: blur(12px); /* Add blur */
+        background-color: rgba(6, 6, 6, 0.6);
+        mask-image: none;
+        -webkit-mask-image: none;
+        
+        backdrop-filter: blur(12px); 
         -webkit-backdrop-filter: blur(12px);
     }
 
