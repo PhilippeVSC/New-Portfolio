@@ -7,6 +7,7 @@
     --white: #ffffff;
     --light-gray: #7f848c;
     --dark-gray: #1d1a1a;
+    --card-color: #0b0b0b;
 
     --header-height: 48px;
 }
@@ -119,11 +120,16 @@ header nav li {
     align-items: center;
 
     cursor: pointer;
+}
+
+header nav li a {
+    text-decoration: none;
+    color: var(--white);
     transition: .2s;
 }
 
 /* Header li:hover */
-header nav li:hover {
+header nav li:hover a {
     color: var(--light-gray);
 }
 
@@ -131,11 +137,6 @@ header nav li:hover {
 header nav li:nth-child(2) {
     position: relative;
     display: inline-flex;
-}
-
-/* Projects text on hover */
-header nav li:nth-child(2):hover {
-    color: var(--white);
 }
 
 /* Select the Projects chevron */
@@ -202,7 +203,7 @@ header nav li:nth-child(2):hover .header-chevron {
 /* Select projects icon in .header-projects-container */
 .header-projects-container a .header-projects-icon {
     width: 16px;
-    filter: invert(56%) sepia(9%) saturate(302%) hue-rotate(178deg) brightness(91%) contrast(88%);
+    filter: invert(56%) sepia(9%) saturate(302%) hue-rotate(178deg) brightness(91%) contrast(88%); /* gray */
     transition: 0s;
 }
 
@@ -213,7 +214,7 @@ header nav li:nth-child(2):hover .header-chevron {
 
 /* Change the SVG color of icons when .header-projects-container is hovered */
 .header-projects-container a:hover .header-projects-icon {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(1deg) brightness(101%) contrast(104%);
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(1deg) brightness(101%) contrast(104%); /* White */
 }
 
 /* When Projects is hovered, projects list window is shown */
@@ -226,6 +227,7 @@ li:nth-child(2):hover .header-projects-container {
 
 /*-------- Main --------*/
 main {
+    position: relative;
     height: fit-content;
     width: 100%;
 
@@ -236,8 +238,10 @@ main {
 
 /* Set the size of main sections */
 #home, #project, #about, #contact {
-    width: min(1050px, 100%);
+    width: min(1050px, calc(100% - 50px));
     height: 100vh;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 /*-------- Home --------*/
@@ -247,6 +251,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: fit-content;
+    padding-bottom: 100px;
+
+    border-bottom: 1px solid var(--dark-gray);
 }
 
 #home .top-part {
@@ -256,7 +264,7 @@ main {
 
     display: flex;
     align-items: end;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 #home .top-part .background {
@@ -373,6 +381,194 @@ main {
     color: var(--light-gray);
 }
 /*-------- Home End --------*/
+/*-------- Projects --------*/
+#project {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 160px;
+    border-bottom: 1px solid var(--dark-gray);
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+#project .light.n1 {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+        800px circle at 50% 50%, 
+        #ff9d00a8,
+        transparent 40%
+    );
+    left: -25%;
+    top: 25%;
+    opacity: .05;
+    z-index: -1;
+}
+
+#project .light.n2 {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(
+        650px circle at 50% 50%, 
+        #ff6262c3,
+        transparent 40%
+    );
+    left: 55%;
+    top: 14%;
+    opacity: .05;
+    z-index: -1;
+}
+
+/* Project Text Container */
+#project .text {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+/* Project Title */
+.project-title {
+    font-size: 35px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    width: fit-content;
+
+    color: transparent;
+    background-image: linear-gradient(to right, #ff6262, #ff9c00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 22px;
+}
+
+/* Project Description */
+.project-description {
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: var(--light-gray);
+    margin-bottom: 70px;
+}
+
+/* Projects card container */
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;  
+    width: 100%;
+}
+
+#cards:hover > .card::after {
+    opacity: 1;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: .85;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: 260px;
+    flex-direction: column;
+    position: relative;
+    width: calc((100% - 16px) / 3);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+.card::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+}
+
+.card::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    z-index: 3;
+}
+
+.card::after {  
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.4),
+        transparent 40%
+    );
+    z-index: 1;
+}
+
+.card > .card-content {
+    background-color: var(--card-color);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    inset: 1px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+.card .card-info-container {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 30px 1fr;
+    padding-bottom: 20px;
+    height: fit-content;
+}
+
+.card .card-icon {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .card-icon img {
+    width: 20px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(1deg) brightness(101%) contrast(104%);
+}
+
+.card .card-title {
+    grid-area: 1 / 2 / 2 / 3;
+    margin: 0;
+    padding-left: 6px;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--white);
+}
+
+.card .card-description {
+    grid-area: 2 / 2 / 3 / 3;
+    margin: 0;
+    margin-top: 10px;
+    padding-left: 6px;
+    padding-right: 10px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--light-gray);
+}
 
 /*-------- Main End --------*/
 
@@ -489,10 +685,14 @@ main {
     /*--------- Header End --------*/
 
     /*-------- Home --------*/
+    #home {
+        padding-bottom: max(8vw, 50px);
+    }
+
     #home .text h1:nth-child(1) {
         font-size: max(4.5vw, 12px);
         margin-bottom: max(2.4vw, 15px);
-        margin-top: max(3vw, 25px);
+        margin-top: max(8vw, 50px);
     }
 
     #home .text h1:nth-child(2) {
@@ -503,7 +703,7 @@ main {
 
     #home p {
         text-align: center;
-        font-size: max(3vw, 10px);
+        font-size: max(3vw, 14px);
     }
 
     #home .top-part {
