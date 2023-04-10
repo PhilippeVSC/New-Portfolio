@@ -7,7 +7,7 @@ function ShowHeader() {
 // Selectionne les icons ayant la classe '.icon'.
 var icons = document.querySelectorAll('.icon');
 
-// Generate a random position around the original position.
+// Generate a random position in a range of -15px, +15px.
 function randomPos(icon) {
     let rTop = Math.floor(Math.random() * 31) - 15; // Génère une valeur entre -15 et +15
     let rLeft = Math.floor(Math.random() * 31) - 15; // Génère une valeur entre -15 et +15
@@ -15,6 +15,7 @@ function randomPos(icon) {
     return[rTop, rLeft];
 }
 
+/* Create an animation for all icons */
 icons.forEach(function(icon, index) {
     var i = index + 1;
     var animationDuration = 3 + (i * 0.5) + 's';
