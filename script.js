@@ -9,20 +9,20 @@ var icons = document.querySelectorAll('.icon');
 
 // Generate a random position in a range of -15px, +15px.
 function randomPos(icon) {
-    let rTop = Math.floor(Math.random() * 31) - 15; // Génère une valeur entre -15 et +15
-    let rLeft = Math.floor(Math.random() * 31) - 15; // Génère une valeur entre -15 et +15
+    var rTop = Math.floor(Math.random() * 31) - 15;
+    var rLeft = Math.floor(Math.random() * 31) - 15;
 
     return[rTop, rLeft];
 }
 
-/* Create an animation for all icons */
+/* Create an animation for all #home icons */
 icons.forEach(function(icon, index) {
     var i = index + 1;
-    var animationDuration = 3 + (i * 0.5) + 's';
-    var scale = Math.random() * (1.30 - 0.70) + 0.70;
+    var animationDuration = 3 + (i * 0.5) + 's'; /* Animation Duration */
+    var scale = Math.random() * (1.30 - 0.70) + 0.70; /* Icon Size */
 
-    icon.style.left = icon.offsetLeft + 'px';
-    icon.style.top = icon.offsetTop + 'px';
+    icon.style.left = icon.offsetLeft + 'px'; /* Get & set left position */
+    icon.style.top = icon.offsetTop + 'px'; /* Get & set top position */
     icon.style.webkitAnimationName = 'animate' + i;
     icon.style.webkitAnimationDuration = animationDuration;
     icon.style.animationName = 'animate' + i;
