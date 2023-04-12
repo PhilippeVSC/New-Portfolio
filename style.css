@@ -390,7 +390,7 @@ main {
 #project {
     position: relative;
     padding-top: 80px;
-    padding-bottom: 160px;
+    padding-bottom: 80px;
     border-bottom: 1px solid var(--dark-gray);
     height: fit-content;
 
@@ -588,6 +588,114 @@ main {
         width: 100%;
     }
 }
+/*-------- Projects End --------*/
+/*-------- About --------*/
+#about {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--dark-gray);
+    height: fit-content;  
+}
+
+.about-social-container {
+    width: calc(100% - 50px);
+    height: fit-content;
+    gap: 8px;
+    margin-right: 25px;
+    margin-left: 25px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.social-card {
+    width: calc((100% - 16px) / 3);
+    height: auto;
+    background-color: rgba(11, 11, 11, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.social-card:hover {
+    background-color: rgba(20, 20, 20, 0.98);
+}
+
+.social-card h1 {
+    margin: 0;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.social-card div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.social-card img {
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.social-card p {
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: var(--light-gray);
+}
+/*-------- About --------*/
+.about-info-container {
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    margin-right: 50px;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    grid-gap: 20px;
+    align-items: start; /* Ajoutez cette ligne pour aligner les éléments en haut du conteneur */
+    height: auto; /* Ajoutez cette ligne pour que la hauteur de la grille s'adapte à la hauteur du texte */
+    margin-bottom: 50px;
+}
+  
+.about-info-container .about-title {
+    font-size: 35px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: transparent;
+    background-image: linear-gradient(to right, #ff62d8, #5a00ff);
+    width: fit-content;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+  
+.about-info-container .about-description {
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    color: var(--light-gray);
+    text-align: justify;
+    margin: 0;
+    line-height: 30px;
+}
+
+.about-info-container .about-picture {
+    position: relative;
+    margin-left: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: auto;
+    align-self: center; /* Ajoutez cette ligne pour aligner l'image en bas de la cellule de la grille */
+  }
 
 /*-------- Main End --------*/
 
