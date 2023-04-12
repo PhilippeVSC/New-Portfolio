@@ -599,14 +599,14 @@ main {
 }
 
 .about-social-container {
-    width: calc(100% - 50px);
+    width: 100%;
     height: fit-content;
+    margin-top: 50px;
     gap: 8px;
-    margin-right: 25px;
-    margin-left: 25px;
 
     display: flex;
     flex-direction: row;
+    grid-area: 2 / 1 / 3 / 3;
 }
 
 .social-card {
@@ -614,7 +614,7 @@ main {
     height: auto;
     background-color: rgba(11, 11, 11, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 24px;
     border-radius: 10px;
     cursor: pointer;
     transition: 500ms;
@@ -636,6 +636,7 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .social-card img {
@@ -650,18 +651,23 @@ main {
     font-family: 'Poppins';
     font-weight: 500;
     color: var(--light-gray);
+    margin: 0;
 }
 /*-------- About --------*/
 .about-info-container {
-    width: calc(100% - 100px);
-    margin-left: 50px;
-    margin-right: 50px;
+    width: calc(100% - 50px);
+    margin-left: 25px;
+    margin-right: 25px;
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 1fr 320px;
     grid-gap: 20px;
     align-items: start; /* Ajoutez cette ligne pour aligner les éléments en haut du conteneur */
     height: auto; /* Ajoutez cette ligne pour que la hauteur de la grille s'adapte à la hauteur du texte */
     margin-bottom: 50px;
+}
+
+.about-text {
+    margin-left: 25px;
 }
   
 .about-info-container .about-title {
@@ -690,12 +696,54 @@ main {
 .about-info-container .about-picture {
     position: relative;
     margin-left: auto;
+    margin-right: 25px;
+    background: url(src/img/picture2.png);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     height: 400px;
-    width: auto;
+    width: 100%;
     align-self: center; /* Ajoutez cette ligne pour aligner l'image en bas de la cellule de la grille */
-  }
+}
+
+@media (max-width: 800px) {
+    .about-info-container {
+        grid-template-columns: repeat(1fr, 1fr);
+        grid-template-rows: repeat(fit-content, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+    }
+
+    .about-text {
+        grid-area: 1 / 1 / 2 / 3;
+        width: calc(100% - 50px);
+        margin-right: 25px;
+        margin-left: 25px;
+        margin-bottom: 40px;
+        height: fit-content;
+    }
+
+    .about-social-container {
+        grid-area: 2 / 1 / 3 / 2;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    .about-social-container .social-card {
+        width: calc(100% - 48px); /* Padding */
+        box-sizing: content-box;
+    }
+
+    .about-info-container .about-picture {
+        grid-area: 2 / 2 / 3 / 3;
+        width: 100%;
+        margin: 0;
+        background-size: contain;
+        background-position: right;
+    }
+}
 
 /*-------- Main End --------*/
 
