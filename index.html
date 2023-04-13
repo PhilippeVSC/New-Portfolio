@@ -17,9 +17,9 @@
     <!-- Header -->
     <header>
         <nav>
-            <img class="logo" src="src/img/shortcut.png" draggable="false">
+            <img class="logo" src="src/img/shortcut.png" draggable="false" alt="Logo du header">
             <h1>Philippe Vives Carceller</h1> 
-            <img id="menu-burger" src="src/img/menu-burger.svg" onclick="ShowHeader()"> <!-- Menu burger icon -->
+            <img id="menu-burger" src="src/img/menu-burger.svg" onclick="ShowHeader()" alt="Bouton du menu burger"> <!-- Menu burger icon -->
             <ul>
                 <!-- Accueil Button -->
                 <li>
@@ -174,22 +174,24 @@
         </section>
         <!-- A propos -->
         <section id="about">
+            <!-- Title & Description -->
             <div class="about-info-container">
-                <div class="about-text">
-                    <h1 class="about-title">À PROPOS</h1>
-                    <p class="about-description">
-                    Né le 19 janvier 2004, j'ai aujourd'hui 19 ans. En 2022 j'ai obtenu
-                    un baccalauréat STI2D option SIN (Système d'Information du Numérique).
-                    Suite à l'obtention de mon diplôme, et encore indécis quant à mon futur
-                    professionnel, je me suis donc laissé du temps pour prendre du recul et
-                    réfléchir à ce que je voulais vraiment faire par la suite. J'ai profité
-                    également de ce temps pour expérimenter différents emplois (restauration,
-                    animation) et pour passer mon permis de conduire B2. Je me suis également
-                    découvert une passion pour le développement web. J'ai ainsi trouvé ma voie:
-                    m'orienter vers une formation de développeur web.
-                    </p>
+                <h1 class="about-title">À PROPOS</h1>
+                <p class="about-description">
+                Né le 19 janvier 2004, j'ai aujourd'hui 19 ans. En 2022 j'ai obtenu
+                un baccalauréat STI2D option SIN (Système d'Information du Numérique).
+                Suite à l'obtention de mon diplôme, et encore indécis quant à mon futur
+                professionnel, je me suis donc laissé du temps pour prendre du recul et
+                réfléchir à ce que je voulais vraiment faire par la suite. J'ai profité
+                également de ce temps pour expérimenter différents emplois (restauration,
+                animation) et pour passer mon permis de conduire B2. Je me suis également
+                découvert une passion pour le développement web. J'ai ainsi trouvé ma voie:
+                m'orienter vers une formation de développeur web.
+                </p>
             </div>
+            <!-- Picture -->
             <div alt="Photo de profil" class="about-picture"></div>
+            <!-- social networks buttons -->
             <div class="about-social-container">
                 <a class="social-card github">
                     <div>
@@ -212,12 +214,40 @@
                     </div>
                     <p>Pour en savoir plus sur mes expériences professionnelles</p>
                 </a>
-            </div>
-            </div>              
+            </div>           
         </section>
         <!-- Contact -->
         <section id="contact">
+            <div class="info-part">
+                <h1 class="title">CONTACT</h1>
+                <div class="phone-number">
+                    <img src="src/img/phone-solid.svg">
+                    <h1>Téléphone</h1>
+                    <p>07 67 43 66 83</p>
+                </div>
+                <div class="email-adress">
+                    <img src="src/img/envelope-solid.svg">
+                    <h1>E-mail</h1>
+                    <p>philippe.vivesc@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form name="contactForm" onsubmit="return validateForm()">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" placeholder="Nom">
 
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Prénom">
+            
+                    <label for="email">Adresse e-mail :</label>
+                    <input type="email" id="email" name="email" placeholder="Adresse e-mail">
+            
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Message"></textarea>
+            
+                    <input type="submit" class="contact-form-submit" value="Envoyer">
+                </form>
+            </div>
         </section>
     </main>
     <!-- Footer -->

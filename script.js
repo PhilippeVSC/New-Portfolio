@@ -70,3 +70,47 @@ document.getElementById("cards").onmousemove = e => {
       card.style.setProperty("--mouse-y", `${y}px`);
     };
   }
+
+  function validateForm() {
+    event.preventDefault();
+
+    var nom = document.forms["contactForm"]["nom"].value;
+    var prenom = document.forms["contactForm"]["prenom"].value;
+    var email = document.forms["contactForm"]["email"].value;
+    var message = document.forms["contactForm"]["message"].value;
+    if (nom === "" || prenom === "" || email === "" || message === "") {
+        afficherFenetreModale('Veuillez remplir tous les champs du formulaire.', 'rgb(233, 45, 45)');
+        return false;
+    } else {
+        afficherFenetreModale('Message envoyé avec succès !', '#62ff62');
+        return true;        
+    }
+}
+
+function afficherFenetreModale(message, color) {
+    // Créer la fenêtre modale
+    var fenetreModale = document.createElement('div');
+    fenetreModale.className = 'fenetre-modale'; // Ajouter une classe pour la personnalisation du style
+  
+    // Ajouter le contenu à la fenêtre modale
+    var contenu = '<p>' + message + '</p><button onclick="fermerModal()">Fermer</button>';
+    fenetreModale.innerHTML = contenu;
+  
+    // Appliquer la couleur à la fenêtre modale
+    fenetreModale.style.borderColor = color;
+  
+    // Ajouter la fenêtre modale à la page
+    document.body.appendChild(fenetreModale);
+  
+    // Centrer la fenêtre modale
+    var hauteurFenetre = fenetreModale.offsetHeight;
+    var largeurFenetre = fenetreModale.offsetWidth;
+    fenetreModale.style.top = '50%';
+    fenetreModale.style.left = '50%';
+    fenetreModale.style.transform = 'translate(-50%, -50%)';
+}
+
+function fermerModal() {
+    var fenetreModale = document.querySelector('.fenetre-modale'); // Sélectionner la fenêtre modale
+    fenetreModale.parentNode.removeChild(fenetreModale); // Supprimer la fenêtre modale du parent
+}
