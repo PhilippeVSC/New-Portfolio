@@ -696,10 +696,9 @@ main {
 .about-info-container .about-picture {
     position: relative;
     margin-left: auto;
-    margin-right: 25px;
     background: url(src/img/picture2.png);
     background-size: contain;
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
     height: 400px;
     width: 100%;
@@ -717,8 +716,6 @@ main {
     .about-text {
         grid-area: 1 / 1 / 2 / 3;
         width: calc(100% - 50px);
-        margin-right: 25px;
-        margin-left: 25px;
         margin-bottom: 40px;
         height: fit-content;
     }
@@ -729,19 +726,37 @@ main {
         width: 100%;
         height: 100%;
         margin: 0;
+        gap: 8px;
+        justify-content: end;
+        margin-top: 25px;
+        margin-left: 20px;
+        transform: translateY(-8%);
     }
 
     .about-social-container .social-card {
-        width: calc(100% - 48px); /* Padding */
+        width: calc(90% - 48px); /* Padding */
         box-sizing: content-box;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
     .about-info-container .about-picture {
         grid-area: 2 / 2 / 3 / 3;
         width: 100%;
+        height: calc(100% + 30px);
         margin: 0;
+        margin-top: 30px;
         background-size: contain;
-        background-position: right;
+        background-position: right 25px top 0;
+        transform: translateY(-8%);
+    }
+
+    #cards {
+        width: calc(100% - 100px);
+    }
+
+    .about-info-container {
+        margin-bottom: 0;
     }
 }
 
