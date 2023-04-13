@@ -832,6 +832,53 @@ main {
     opacity: 1;
 }
 
+footer {
+    border-top: 1px solid var(--dark-gray);
+    height: fit-content;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+footer .container {
+    width: min(1050px, 100%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+footer a,
+footer p,
+footer h1 {
+    font-family: 'Poppins';
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--light-gray);
+    text-decoration: none;
+    margin: 0;
+    margin-bottom: 12px;
+}
+
+footer h1 {
+    color: var(--white);
+}
+
+footer section {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+footer .page {
+    margin-left: auto;
+}
+
 @media (max-width: 800px) {
     /*-------- Projects --------*/
     .card {
@@ -870,13 +917,20 @@ main {
         flex-wrap: wrap;
     }
 
+    #contact .info-part div {
+        padding-bottom: 0;
+        margin-bottom: max(2.4vw, 15px);
+    }
+
     #contact .info-part .title {
         flex-basis: 100%;
-        margin-left: 25px;
+        margin-left: 0;
+        font-size: max(5vw, 16px);
+        margin-bottom: max(2.4vw, 15px);
     }
 
     #contact .info-part .phone-number {
-        margin-left: 25px;
+        margin-left: 0;
         margin-right: 70px;
     }
 
@@ -885,6 +939,13 @@ main {
         width: calc(100% - 120px);
         margin-right: 25px;
         margin-left: 25px;
+    }
+
+    footer section {
+        width: calc(50% - 50px);
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-bottom: 25px;
     }
 }
 
@@ -1120,6 +1181,10 @@ main {
     .card {
         width: 100%;
     }
+
+    footer section {
+        width: calc(100% - 50px);
+    }
 }
 
 @media (max-width: 400px) {
@@ -1148,8 +1213,8 @@ main {
     background-color: var(--card-color);
     border: 1px solid #62ff62;
     color: var(--white);
-    -webkit-box-shadow: 0px 0px 10px 8px var(--background-color); 
-    box-shadow: 0px 0px 10px 8px var(--background-color);
+    -webkit-box-shadow: 0px 0px 10px 8px var(--card-color); 
+    box-shadow: 0px 0px 10px 8px var(--card-color);
     padding: 20px;
     padding-left: 50px;
     padding-right: 50px;
