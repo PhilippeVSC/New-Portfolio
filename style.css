@@ -836,6 +836,23 @@ main {
     opacity: 1;
 }
 
+/* Loading circle when submit button pressed */
+#contact .contact-form .submit-loading {
+    border: 6px solid var(--dark-gray); /* Light grey */
+    border-top: 6px solid #62ff62; /* Blue */
+    border-radius: 50%;
+    width: calc(40px - 11px);
+    height: calc(40px - 11px);
+    animation: spin 1s linear infinite;
+    float: right;
+    display: none;
+  }
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 footer {
     border-top: 1px solid var(--dark-gray);
     height: fit-content;

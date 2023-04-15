@@ -71,18 +71,41 @@ document.getElementById("cards").onmousemove = e => {
     };
   }
 
-  function validateForm() {
+function validateForm() {
     event.preventDefault();
+
+    var loading_circle = document.getElementsByClassName('submit-loading')[0];
+    var submit_button = document.getElementsByClassName('contact-form-submit')[0];
 
     var nom = document.forms["contactForm"]["nom"].value;
     var prenom = document.forms["contactForm"]["prenom"].value;
     var email = document.forms["contactForm"]["email"].value;
     var message = document.forms["contactForm"]["message"].value;
+
     if (nom === "" || prenom === "" || email === "" || message === "") {
         afficherFenetreModale('Veuillez remplir tous les champs du formulaire.', 'rgb(233, 45, 45)');
         return false;
     } else {
-        afficherFenetreModale('Message envoyé avec succès !', '#62ff62');
+        submit_button.style.display = "none";
+        loading_circle.style.display = "block";    
+
+        var params = {
+            from_name : nom + ' ' + prenom,
+            email_id : email,
+            message : message
+        }
+
+        emailjs.send("service_crf037n", "template_0jw75na", params)
+        .then(function(response) { /** Si le message est envoyé avec succès **/
+            afficherFenetreModale('Message envoyé avec succès !', '#62ff62');
+            submit_button.style.display = "block";
+            loading_circle.style.display = "none";    
+            document.forms["contactForm"].reset(); // Réinitialiser les champs du formulaire
+        }, function(error) { /** Si une erreur survient **/
+            afficherFenetreModale('Une erreur est survenue. Veuillez réessayer', 'rgb(233, 45, 45)');
+            submit_button.style.display = "block";
+            loading_circle.style.display = "none";    
+        });
         return true;        
     }
 }
