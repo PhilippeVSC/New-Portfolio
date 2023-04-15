@@ -400,6 +400,7 @@ main {
     align-items: center;
     flex-direction: column;
     z-index: 1;
+    scroll-margin-top: 40px;
 }
 
 #project .light.n1 {
@@ -590,7 +591,8 @@ main {
     padding-top: 80px;
     padding-bottom: 80px;
     border-bottom: 1px solid var(--dark-gray);
-    height: fit-content;  
+    height: fit-content;
+    scroll-margin-top: 100px;
 }
 
 .about-info-container {
@@ -649,6 +651,7 @@ main {
     border-radius: 10px;
     cursor: pointer;
     transition: 500ms;
+    text-decoration: none;
 }
 
 .social-card:hover {
@@ -691,6 +694,7 @@ main {
     height: fit-content;
     display: flex;
     flex-direction: row;
+    scroll-margin-top: 180px;
 }
 
 #contact .info-part {
@@ -851,6 +855,12 @@ footer .container {
     justify-content: space-between;
 }
 
+footer .logo {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
 footer a,
 footer p,
 footer h1 {
@@ -861,6 +871,11 @@ footer h1 {
     text-decoration: none;
     margin: 0;
     margin-bottom: 12px;
+    transition: color 300ms;
+}
+
+footer a:hover {
+    color: var(--white);
 }
 
 footer h1 {
@@ -877,6 +892,17 @@ footer section {
 
 footer .page {
     margin-left: auto;
+}
+
+footer .container .info div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+
+footer .container .info div h1 {
+    margin: 0;
 }
 
 @media (max-width: 800px) {

@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:site_name" content="Philippe Vives Carceller">
+
+    <title>Portfolio - Philippe Vives Carceller</title>
+    <meta name="description" content="Bonjour, je suis Philippe Vives Carceller. Découvrez qui je suis et mes projets les plus récents !">
     <meta name="author" content="Philippe Vives Carceller">
-    <meta name="description" content="Bonjour, je suis Philippe Vives Carceller et voici mon portfolio. Vous y trouverez des informations me concernant ainsi que les projets que j'ai récemment réalisés.">
+
+    <meta property="og:url" content="https://www.philippevivesc.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Philippe Vives Carceller">
+    <meta property="og:description" content="Bonjour, je suis Philippe Vives Carceller. Découvrez qui je suis et mes projets les plus récents !">
+    <meta property="og:image" content="https://www.philippevivesc.com/src/img/og_image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="philippevivesc.com">
+    <meta property="twitter:url" content="https://www.philippevivesc.com/">
+    <meta name="twitter:title" content="Philippe Vives Carceller - Portfolio">
+    <meta name="twitter:description" content="Bonjour, je suis Philippe Vives Carceller. Découvrez qui je suis et mes projets les plus récents !">
+    <meta name="twitter:image" content="https://www.philippevivesc.com/src/img/og_image.jpg">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#060606">
+
+    <meta name="keywords" content="philippe, vives, carceller, portfolio, projets, contact">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+
     <link rel="icon" href="src/img/logo.png" type="image/x-icon">
     <link rel="shortcut icon" href="src/img/shortcut.png" type="image/x-icon">
+    <link rel="canonical" href="https://www.philippevivesc.com/"/>
+
     <link href="style.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Portfolio</title>
+
+    <!-- Display the logo in Google search results -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Philippe Vives Carceller",
+          "url": "https://www.philippevivesc.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.philippevivesc.com/src/img/logo.png",
+            "width": "1195",
+            "height": "1195"
+          }
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -31,27 +72,27 @@
                     <img class="header-chevron" src="src/img/chevron-down.svg"> <!-- Chevron on the right of the text-->
                     <div class="header-projects-container"> <!-- Projects list window -->
                         <!-- Morpion -->
-                        <a href="#">
+                        <a href="projets/morpion/index.html" target="_blank">
                             <img class="header-projects-icon" src="src/img/project-icon/morpion-icon.svg">
                             <p>Morpion</p>
                         </a>
                         <!-- Old Portfolio -->
-                        <a href="#">
+                        <a href="projets/old_portfolio/index.html" target="_blank">
                             <img class="header-projects-icon" src="src/img/project-icon/portfolio-icon.svg">
                             <p>Ancien Portfolio</p>
                         </a>
                         <!-- Photo Galery -->
-                        <a href="#">
+                        <a href="projets/gallery" target="_blank">
                             <img class="header-projects-icon" src="src/img/project-icon/gallery-icon.svg">
                             <p>Galerie Photo</p>
                         </a>
                         <!-- Calculator -->
-                        <a href="#">
+                        <a href="projets/calculatrice/index.html" target="_blank">
                             <img class="header-projects-icon" src="src/img/project-icon/calc-icon.svg">
                             <p>Calculatrice</p>
                         </a>
                         <!-- BurgerSup -->
-                        <a href="#">
+                        <a href="projets/burgersup/index.html" target="_blank">
                             <img class="header-projects-icon" src="src/img/project-icon/burgersup-icon.svg">
                             <p>BurgerSup</p>
                         </a>
@@ -106,7 +147,7 @@
             <!-- Projects cards container -->
             <div id="cards">
                 <!-- Project n°1 -->
-                <div class="card Morpion">
+                <a class="card Morpion" href="projets/morpion/index.html" target="_blank">
                     <div class="card-content">
                         <div class="card-background"></div>
                         <div class="card-info-container">
@@ -117,9 +158,9 @@
                             <p class="card-description">Jeu de morpion réalisé en Html, Css et Javascript.</p>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Project n°2 -->
-                <div class="card Portfolio">
+                <a class="card Portfolio" href="projets/old_portfolio/index.html" target="_blank">
                     <div class="card-content">
                         <div class="card-background"></div>
                         <div class="card-info-container">
@@ -130,9 +171,9 @@
                             <p class="card-description">Ancien Portfolio réalisé en Html, Css et Javascript.</p>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Project n°3 -->
-                <div class="card Gallery">
+                <a class="card Gallery" href="projets/gallery" target="_blank">
                     <div class="card-content">
                         <div class="card-background"></div>
                         <div class="card-info-container">
@@ -143,9 +184,9 @@
                             <p class="card-description">Galerie Photo regroupant mes peintures réalisée sur Wordpress.</p>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Project n°4 -->
-                <div class="card Calculator">
+                <a class="card Calculator" href="projets/calculatrice/index.html" target="_blank">
                     <div class="card-content">
                         <div class="card-background"></div>
                         <div class="card-info-container">
@@ -156,9 +197,9 @@
                             <p class="card-description">Calculatrice réalisée en Html, Css et Javascript.</p>
                         </div>
                     </div>
-                </div>
+                </a>
                 <!-- Project n°5 -->
-                <div class="card BurgerSup">
+                <a class="card BurgerSup" href="projets/burgersup/index.html" target="_blank">
                     <div class="card-content">
                         <div class="card-background"></div>
                         <div class="card-info-container">
@@ -169,7 +210,7 @@
                             <p class="card-description">Compteur d'heures supplémentaires réalisé en Html, Css et Javascript.</p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
         <!-- A propos -->
@@ -193,23 +234,23 @@
             <div alt="Photo de profil" class="about-picture"></div>
             <!-- social networks buttons -->
             <div class="about-social-container">
-                <a class="social-card github">
+                <a class="social-card github" href="https://github.com/PhilippeVSC" target="_blank">
                     <div>
-                        <img src="github.svg">
+                        <img src="src/img/github.svg">
                         <h1>GitHub</h1>
                     </div>
                     <p>Pour accéder aux codes de mes projets</p>
                 </a>
-                <a class="social-card instagram">
+                <a class="social-card instagram" href="https://www.instagram.com/zoteuh/" target="_blank">
                     <div>
-                        <img src="instagram.svg">
+                        <img src="src/img/instagram.svg">
                         <h1>Instagram</h1>
                     </div>
                     <p>Pour visualiser mes peintures</p>
                 </a>
-                <a class="social-card github">
+                <a class="social-card github" href="https://www.linkedin.com/in/philippe-vives-carceller-01445826b" target="_blank">
                     <div>
-                        <img src="linkedin.svg">
+                        <img src="src/img/linkedin.svg">
                         <h1>Linkedin</h1>
                     </div>
                     <p>Pour en savoir plus sur mes expériences professionnelles</p>
@@ -254,30 +295,33 @@
     <footer>
         <div class="container">
             <section class="info">
-                <h1>Philippe Vives Carceller</h1>
+                <div>
+                    <img class="logo" src="src/img/shortcut.png" draggable="false" alt="Logo du header">
+                    <h1>Philippe Vives Carceller</h1>
+                </div>
                 <p>philippe.vivesc@gmail.com</p>
                 <p>07 67 43 66 83</p>
             </section>
             <section class="page">
                 <h1>Page</h1>
                 <a href="#home">Accueil</a>
-                <a href="#home">Projets</a>
-                <a href="#home">À propos</a>
-                <a href="#home">Contact</a>
+                <a href="#project">Projets</a>
+                <a href="#about">À propos</a>
+                <a href="#contact">Contact</a>
             </section>
             <section class="social">
                 <h1>Réseaux</h1>
-                <a href="https://www.example.com" target="_blank">GitHub</a>
-                <a href="https://www.example.com" target="_blank">Instagram</a>
-                <a href="https://www.example.com" target="_blank">Linkedin</a>
+                <a href="https://github.com/PhilippeVSC" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/zoteuh/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/philippe-vives-carceller-01445826b" target="_blank">Linkedin</a>
             </section>
             <section class="projects">
                 <h1>Projets</h1>
-                <a href="https://www.example.com" target="_blank">Morpion</a>
-                <a href="https://www.example.com" target="_blank">Ancien Porfolio</a>
-                <a href="https://www.example.com" target="_blank">Galerie Photo</a>
-                <a href="https://www.example.com" target="_blank">Calculatrice</a>
-                <a href="https://www.example.com" target="_blank">BurgerSup</a>
+                <a href="projets/morpion/index.html" target="_blank">Morpion</a>
+                <a href="projets/old_portfolio/index.html" target="_blank">Ancien Porfolio</a>
+                <a href="projets/gallery" target="_blank">Galerie Photo</a>
+                <a href="projets/calculatrice/index.html" target="_blank">Calculatrice</a>
+                <a href="projets/burgersup/index.html" target="_blank">BurgerSup</a>
             </section>
         </div>
     </footer>
