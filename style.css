@@ -952,6 +952,8 @@ footer .container .info div h1 {
     #contact {
         flex-direction: column;
         align-items: center;
+        padding-top: max(9vw, 60px);
+        padding-bottom: max(9vw, 60px);
     }
 
     #contact .info-part {
@@ -962,14 +964,22 @@ footer .container .info div h1 {
 
     #contact .info-part div {
         padding-bottom: 0;
-        margin-bottom: max(2.4vw, 15px);
+        margin-bottom: max(2.4vw, 20px);
+    }
+
+    #contact .info-part .email-adress {
+        margin-bottom: max(4vw, 50px);
     }
 
     #contact .info-part .title {
         flex-basis: 100%;
         margin-left: 0;
-        font-size: max(5vw, 16px);
-        margin-bottom: max(2.4vw, 15px);
+        font-size: max(5vw, 20px);
+        margin-bottom: max(2.4vw, 30px);
+    }
+
+    #contact .info-part div h1 {
+        font-size: max(3.5vw, 18px);
     }
 
     #contact .info-part .phone-number {
@@ -1111,20 +1121,20 @@ footer .container .info div h1 {
     }
 
     #home .text h1:nth-child(1) {
-        font-size: max(4.5vw, 12px);
+        font-size: max(4.5vw, 20px);
         margin-bottom: max(2.4vw, 15px);
         margin-top: max(8vw, 50px);
     }
 
     #home .text h1:nth-child(2) {
         text-align: center;
-        font-size: max(5vw, 16px);
+        font-size: max(5vw, 20px);
         margin-bottom: max(2.4vw, 15px);
     }
 
     #home p {
         text-align: center;
-        font-size: max(3vw, 14px);
+        font-size: max(3vw, 16px);
     }
 
     #home .top-part {
@@ -1171,14 +1181,14 @@ footer .container .info div h1 {
     }
 
     .project-title {
-        font-size: max(5vw, 16px);
+        font-size: max(5vw, 20px);
         width: fit-content;
         margin-bottom: max(2.4vw, 15px);
     }
     
     /* Project Description */
     .project-description {
-        font-size: max(3vw, 14px);
+        font-size: max(3vw, 16px);
         margin-bottom: max(8vw, 40px)
     }
 
@@ -1193,12 +1203,12 @@ footer .container .info div h1 {
     }
 
     .about-info-container .about-description {
-        font-size: max(3vw, 14px);
+        font-size: max(3vw, 16px);
         line-height: inherit;
     }
 
     .about-info-container .about-title {
-        font-size: max(5vw, 16px);
+        font-size: max(5vw, 20px);
         width: fit-content;
         margin-bottom: max(2.4vw, 15px);
     }
@@ -1216,6 +1226,11 @@ footer .container .info div h1 {
     .social-card {
         width: calc(100% - 48px);
         padding: 24px;
+    }
+
+    footer {
+        padding-top: max(9vw, 60px);
+        padding-bottom: max(9vw, 60px);
     }
 }
 

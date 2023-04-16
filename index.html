@@ -40,18 +40,27 @@
 
     <!-- Display the logo in Google search results -->
     <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Philippe Vives Carceller",
+        "url": "https://www.philippevivesc.com/",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.philippevivesc.com/src/img/logo.png",
+        "width": "1195",
+        "height": "1195"
+        },
+        "contactPoint": [
         {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Philippe Vives Carceller",
-          "url": "https://www.philippevivesc.com/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.philippevivesc.com/src/img/logo.png",
-            "width": "1195",
-            "height": "1195"
-          }
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "telephone": "+33-7-67-43-66-83", // Numéro de téléphone français
+            "email": "philippevivesc@gmail.com", // Adresse e-mail
+            "availableLanguage": "French"
         }
+        ]
+    }
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
