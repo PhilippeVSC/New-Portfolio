@@ -922,6 +922,54 @@ footer .container .info div h1 {
     margin: 0;
 }
 
+/* Fenêtre Modal */
+.fenetre-modale {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: var(--card-color);
+    border: 1px solid #62ff62;
+    color: var(--white);
+    -webkit-box-shadow: 0px 0px 10px 8px var(--card-color); 
+    box-shadow: 0px 0px 10px 8px var(--card-color);
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.fenetre-modale p {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fenetre-modale button {
+    background-color: var(--card-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    outline: none;
+    width: 90px;
+    height: 40px;
+    color: var(--white);
+    font-family: 'Poppins';
+    cursor: pointer;
+    transition: border 500ms;
+}
+
+.fenetre-modale button:hover {
+    border-color: var(--light-gray);
+}
+
 @media (max-width: 800px) {
     /*-------- Projects --------*/
     .card {
@@ -999,6 +1047,11 @@ footer .container .info div h1 {
         padding-left: 25px;
         padding-right: 25px;
         margin-bottom: 25px;
+    }
+
+    /* Fenêtre Modal */
+    .fenetre-modale {
+        width: 80vw;
     }
 }
 
@@ -1258,53 +1311,4 @@ footer .container .info div h1 {
     .social-card p {
         display: none;
     }
-}
-
-
-
-.fenetre-modale {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    background-color: var(--card-color);
-    border: 1px solid #62ff62;
-    color: var(--white);
-    -webkit-box-shadow: 0px 0px 10px 8px var(--card-color); 
-    box-shadow: 0px 0px 10px 8px var(--card-color);
-    padding: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    z-index: 1;
-}
-
-.fenetre-modale p {
-    font-family: 'Poppins';
-    font-weight: 500;
-    font-size: 15px;
-    margin: 0;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.fenetre-modale button {
-    background-color: var(--card-color);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    outline: none;
-    width: 90px;
-    height: 40px;
-    color: var(--white);
-    font-family: 'Poppins';
-    cursor: pointer;
-    transition: border 500ms;
-}
-
-.fenetre-modale button:hover {
-    border-color: var(--light-gray);
 }
